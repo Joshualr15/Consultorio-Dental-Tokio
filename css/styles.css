@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Consultorio Dental Tokio (Consultorio Dental Ixtapaluca)
+   Estilos Personalizados UI/UX Clínico de Alta Conversión
+   ========================================================================== */
+
+:root {
+  --clinical-sky: #0284C7;
+  --clinical-cyan: #0EA5E9;
+  --clinical-navy: #0F172A;
+  --clinical-mint: #14B8A6;
+  --clinical-ice: #F8FAFC;
+  --clinical-white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--clinical-navy);
+  background-color: var(--clinical-ice);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+/* Glass Cards & Badges */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.14);
+}
+
+/* Hero Ambient Background */
+.hero-mesh {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 15% 15%, rgba(14, 165, 233, 0.10) 0px, transparent 50%),
+    radial-gradient(at 85% 20%, rgba(20, 184, 166, 0.10) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(2, 132, 199, 0.06) 0px, transparent 55%);
+}
+
+/* Subtle Grid Pattern */
+.bg-clinical-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(2, 132, 199, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.04) 1px, transparent 1px);
+}
+
+/* Card Hover Transitions */
+.treatment-card {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.treatment-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 40px -12px rgba(2, 132, 199, 0.14);
+  border-color: rgba(14, 165, 233, 0.4);
+}
+
+/* Floating Animation for Hero Badges */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 5.5s ease-in-out 2s infinite;
+}
+
+/* Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gallery Bento Hover Zoom */
+.bento-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-item img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-item:hover img {
+  transform: scale(1.06);
+}
+
+/* FAQ Accordion Smooth Transition */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-item.open .faq-icon {
+  transform: rotate(180deg);
+  background-color: var(--clinical-sky);
+  color: #ffffff;
+}
+
+/* Pulse ring for WhatsApp Floating Button */
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float-pulse {
+  animation: pulseRing 2.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 2px solid #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
